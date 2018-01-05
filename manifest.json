@@ -1,0 +1,9 @@
+{
+  "runtime": {
+      "majorVersion": "8"
+  },
+  "command": "java -jar occupation-0.0.1-SNAPSHOT.jar",
+  "release": {
+    "version": "1.2.3"
+  }
+}
