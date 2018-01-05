@@ -1,0 +1,26 @@
+# This references a standard debian container from the
+# Docker Hub https://registry.hub.docker.com/_/debian/
+# Read more about containers on our dev center
+# http://devcenter.wercker.com/docs/containers/index.html
+box: debian
+# You can also use services such as databases. Read more on our dev center:
+# http://devcenter.wercker.com/docs/services/index.html
+
+# This is the build pipeline. Pipelines are the core of wercker
+# Read more about pipelines on our dev center
+# http://devcenter.wercker.com/docs/pipelines/index.html
+build:
+  box: maven:3.5.2-jdk-8
+  steps:
+    - java/maven:
+      goals: clean install
+      settings: pom.xml
+    - internal/docker-push:
+        username: $DOCKERHUB_USERNAME
+        password: $DOCKERHUB_PASSWORD
+        repository: $DOCKERHUB_USERNAME/occupation
+        registry: https://registry.hub.docker.com/v2
+        cmd: /bin/bash -c "java -jar /pipeline/source/target/occupation-0.0.1-SNAPSHOT.jar" 
+  applicationConnectors:
+    - type: http
+      port: 7894
