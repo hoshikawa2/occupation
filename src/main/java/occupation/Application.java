@@ -9,12 +9,12 @@ import java.util.Optional;
 @SpringBootApplication
 public class Application {
 
-    public static Optional<String> port = null;
+    public static String port = null;
     
     public static void main(String[] args) {
     	SpringApplication application = new SpringApplication(Application.class);
     
-        port = Optional.ofNullable(System.getenv("PORT"));
+        port = System.getenv("PORT");
         
     	Map<String, Object> map = new HashMap<>();
 		map.put("SERVER_PORT", port);
