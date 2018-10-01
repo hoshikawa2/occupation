@@ -14,7 +14,7 @@
         <include>manifest.json</include>
       </includes>
       <includes>
-        <include>build.json</include>
+        <include>deployment.json</include>
       </includes>
     </fileSet>   
     <fileSet>
