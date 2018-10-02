@@ -12,6 +12,12 @@
       <outputDirectory>/</outputDirectory>
       <includes>
         <include>manifest.json</include>
+      </includes>
+    </fileSet>   
+    <fileSet>
+      <directory>${project.basedir}</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
         <include>deployment.json</include>
       </includes>
     </fileSet>   
