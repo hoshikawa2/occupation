@@ -12,8 +12,6 @@
       <outputDirectory>/</outputDirectory>
       <includes>
         <include>manifest.json</include>
-      </includes>
-      <includes>
         <include>deployment.json</include>
       </includes>
     </fileSet>   
