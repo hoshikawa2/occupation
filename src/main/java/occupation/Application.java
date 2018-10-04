@@ -14,11 +14,7 @@ public class Application {
     public static void main(String[] args) {
     	SpringApplication application = new SpringApplication(Application.class);
     
-        port = System.getenv("PORT_APP");
-	if (port == null)
-	{
-	        port = System.getenv("PORT");
-	}
+        port = System.getenv("PORT");
         
     	Map<String, Object> map = new HashMap<>();
 		map.put("SERVER_PORT", port);
