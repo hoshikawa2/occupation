@@ -10,7 +10,7 @@ public class GreetingController {
 
     public static String msg = System.getenv("MSG");
         
-    public String template = msg + ", %s!";
+    public String template = msg + ", seja bem vindo %s!";
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/greeting")
